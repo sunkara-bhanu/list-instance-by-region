@@ -37,7 +37,7 @@ data "aws_iam_policy_document" "tf-cicd-pipeline-policies" {
 resource "aws_iam_policy" "tf-cicd-pipeline-policy" {
     name = "tf-cicd-pipeline-policy"
     path = "/"
-    description = "Pipeline policy"
+    description = "Pipeline policy v1"
     policy = data.aws_iam_policy_document.tf-cicd-pipeline-policies.json
 }
 
