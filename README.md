@@ -62,9 +62,11 @@ Part#2:
   ![Link](https://github.com/sunkara-bhanu/list-instance-by-region/blob/main/img/Code_Pipeline_Image.JPG)
   
 Part#4:
-  1. Navigate to the unit_tests folder from root foler
+  1. Navigate to the unit_tests folder from root folder for [Link](https://github.com/sunkara-bhanu/list-instance-by-region/tree/main/unit_tests) 
   2. Run the file from ide with pytest plugin installed
   3. From terminal run "pytest" which will pick the test cases defined in the test_list_instances.py file and summarize the test result.
+  
+  ![Link](https://github.com/sunkara-bhanu/list-instance-by-region/blob/main/img/Unit_Test_Results.JPG)
   
 Part#5:
   1. Open POST man and create new collection with "GET" request type
