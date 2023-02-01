@@ -1,4 +1,4 @@
-# list-instance-by-region
+# List EC2 instance by region
 This project lists resources required to fetch instances across available aws regions
 
 Below are the steps covered to launch resources,
