@@ -57,6 +57,21 @@ Part#2:
   4. Once git clone and git authentication is successful, cd to cloned directory. This directoy will be empty as we haven't pushed the code yet.
   5. Copy Lambda application code from lambda_bootstrap folder to git repo by running cp -R lambda_bootstrap codecommitrepo/ . 
   6. Push the changes to git repo by running git add. && git commit -m "Initial Commit" && git push
-  7. Now navigate to AWS Codepipeline from aws console and check the pipeline status.
+  7. Now navigate to AWS Codepipeline from aws console and check the pipeline status as shown below.
   
-
+  ![Link](https://github.com/sunkara-bhanu/list-instance-by-region/blob/main/img/Code_Pipeline_Image.JPG)
+  
+Part#4:
+  1. Navigate to the unit_tests folder from root foler
+  2. Run the file from ide with pytest plugin installed
+  3. From terminal run "pytest" which will pick the test cases defined in the test_list_instances.py file and summarize the test result.
+  
+Part#5:
+  1. Open POST man and create new collection with "GET" request type
+  2. Copy the API end point generated from Part#3 and also api key resource generated from the api gateway resource
+      eg., API end point: https://b423a19tgi.execute-api.ap-south-1.amazonaws.com/dev/list_ec2?instance_region=us-east-1
+           API key: HoreP1O2ON1RTKzabsfx61JmrirqyYnE4ROw0Yw1
+  3. Use API key under authorization tab and Key as "x-api-key" and value as API key from the previous step
+  4. Add the required query parameter instance region with value eg., "all" or specific aws region to the api end point from step#2
+      eg., https://b423a19tgi.execute-api.ap-south-1.amazonaws.com/dev/list_ec2?instance_region=us-east-1
+  5. Check the API response and status code 
