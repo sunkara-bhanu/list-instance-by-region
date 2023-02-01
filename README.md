@@ -38,11 +38,12 @@ Part#2:
   ![Link](https://github.com/sunkara-bhanu/list-instance-by-region/blob/main/img/terraform_tfvars.JPG)
   3. Change the BUCKET_NAME in the file providers.tf with the bucket you created in pre-requisites. Use the bucket name, not the ARN
   4. Change the BUCKET_NAME in the file airbus_dev_devops02_code_repo/lambda_bootstrap/providers.tf with the bucket you created in pre-requisites. Use the bucket name, not the ARN
-  5. Change the BUCKET_NAME in the file modules/codepipeline/roles.tf with the bucket you created in pre-requisites. Use the Bucket ARN here.
-  6. Navigate to code_pipeline_deployment and run "terraform init"
-  7. Run "terraform validate"
-  8. Run "terraform plan" and review the output in terminal
-  9. Run "terraform apply" and review the output in terminal and when ready, type yes and hit enter
+  5. Update the account_id variable with your aws account id in airbus_dev_devops02_code_repo/lambda_bootstrap/providers.tf file
+  6. Change the BUCKET_NAME in the file modules/codepipeline/roles.tf with the bucket you created in pre-requisites. Use the Bucket ARN here.
+  7. Navigate to code_pipeline_deployment and run "terraform init"
+  8. Run "terraform validate"
+  9. Run "terraform plan" and review the output in terminal
+  10. Run "terraform apply" and review the output in terminal and when ready, type yes and hit enter
   
  Part#3:
   1. Push the Lambda code to codecommit using codecommit url generated from Part#2 which will trigger codepipeline to deploy the lambda code.
