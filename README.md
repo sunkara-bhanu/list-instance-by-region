@@ -34,14 +34,12 @@ Part#1:
   
 Part#2:
   1. Deploy infrastructure for Codepipeline Deployment can be found in [Link](https://github.com/sunkara-bhanu/list-instance-by-region/tree/main/code_pipeline_deployment)
-  2. Navigate to folder code_pipeline_deployment update the following values from terraform.tfvars
-  3. 
-  4. 
-Uploading the Lambda code to CodeCommit Repository. ie, lambda code on path lambda_bootstrap/
-To achieve this, follow the pre-requisites steps below
-
-Install Terraform : link
-Install AWS CLI : link
-Configure AWS CLI with AWS Account do aws sts get-caller-identity for validation) : link
-Create a S3 Bucket in us-east-1. This bucket will be used to store the terraform state file. Note the bucket arn as it will be used in the steps below.
+  2. Navigate to folder code_pipeline_deploymen and change the ORG_NAME, TEAM_NAME and PROJECT_ID. values from terraform.tfvars
+  ![Link]()
+  
+  
+  3. Change the BUCKET_NAME in the file providers.tf with the bucket you created in pre-requisites. Use the bucket name, not the ARN
+  4. Change the BUCKET_NAME in the file airbus_dev_devops02_code_repo/providers.tf with the bucket you created in pre-requisites. Use the bucket name, not the ARN
+  5. Change the BUCKET_NAME in the file modules/codepipeline/roles.tf with the bucket you created in pre-requisites. Use the Bucket ARN here.
+  
 
