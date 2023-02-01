@@ -13,7 +13,7 @@ variable "ecr_repo_arn" {
 
 variable "account_id" {
   type = number
-  default = 534346356116
+  default = 1111111111
 }
 
 variable "region" {
