@@ -35,11 +35,28 @@ Part#1:
 Part#2:
   1. Deploy infrastructure for Codepipeline Deployment can be found in [Link](https://github.com/sunkara-bhanu/list-instance-by-region/tree/main/code_pipeline_deployment)
   2. Navigate to folder code_pipeline_deploymen and change the ORG_NAME, TEAM_NAME and PROJECT_ID. values from terraform.tfvars
-  ![Link]()
-  
-  
+  ![Link](https://github.com/sunkara-bhanu/list-instance-by-region/blob/main/img/terraform_tfvars.JPG)
   3. Change the BUCKET_NAME in the file providers.tf with the bucket you created in pre-requisites. Use the bucket name, not the ARN
-  4. Change the BUCKET_NAME in the file airbus_dev_devops02_code_repo/providers.tf with the bucket you created in pre-requisites. Use the bucket name, not the ARN
+  4. Change the BUCKET_NAME in the file airbus_dev_devops02_code_repo/lambda_bootstrap/providers.tf with the bucket you created in pre-requisites. Use the bucket name, not the ARN
   5. Change the BUCKET_NAME in the file modules/codepipeline/roles.tf with the bucket you created in pre-requisites. Use the Bucket ARN here.
+  6. Navigate to code_pipeline_deployment and run "terraform init"
+  7. Run "terraform validate"
+  8. Run "terraform plan" and review the output in terminal
+  9. Run "terraform apply" and review the output in terminal and when ready, type yes and hit enter
+  
+ Part#3:
+  1. Push the Lambda code to codecommit using codecommit url generated from Part#2 which will trigger codepipeline to deploy the lambda code.
+  2. Run cd.. into the Root folder. From the output above, copy the code commit repository link.
+  3. Run git clone <codecommit repo link>
+      a. If credentials are required, Generate a CodeCommit credentials from aws console for the IAM user that you logged in:
+      b. Select Users from IAM (Access Management Tab)
+      c. Select the user that you want to provide CodeCommit Access to.
+      d. Select Security Credentials from the User information panel.
+      e. Scroll down and you should be seeing a subsection HTTPS Git credentials for AWS CodeCommit
+      f. Click on Generate Credentials, you should be prompted with Download credentails in cvs file.
+  4. Once git clone and git authentication is successful, cd to cloned directory. This directoy will be empty as we haven't pushed the code yet.
+  5. Copy Lambda application code from lambda_bootstrap folder to git repo by running cp -R lambda_bootstrap codecommitrepo/ . 
+  6. Push the changes to git repo by running git add. && git commit -m "Initial Commit" && git push
+  7. Now navigate to AWS Codepipeline from aws console and check the pipeline status.
   
 
