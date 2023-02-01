@@ -58,5 +58,6 @@ Part#2:
   5. Copy Lambda application code from lambda_bootstrap folder to git repo by running cp -R lambda_bootstrap codecommitrepo/ . 
   6. Push the changes to git repo by running git add. && git commit -m "Initial Commit" && git push
   7. Now navigate to AWS Codepipeline from aws console and check the pipeline status.
+  ![Link](https://github.com/sunkara-bhanu/list-instance-by-region/blob/main/img/Code_Pipeline_Image.JPG)
   
 
