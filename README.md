@@ -38,11 +38,12 @@ Part#2:
   ![Link](https://github.com/sunkara-bhanu/list-instance-by-region/blob/main/img/terraform_tfvars.JPG)
   3. Change the BUCKET_NAME in the file providers.tf with the bucket you created in pre-requisites. Use the bucket name, not the ARN
   4. Change the BUCKET_NAME in the file airbus_dev_devops02_code_repo/lambda_bootstrap/providers.tf with the bucket you created in pre-requisites. Use the bucket name, not the ARN
-  5. Change the BUCKET_NAME in the file modules/codepipeline/roles.tf with the bucket you created in pre-requisites. Use the Bucket ARN here.
-  6. Navigate to code_pipeline_deployment and run "terraform init"
-  7. Run "terraform validate"
-  8. Run "terraform plan" and review the output in terminal
-  9. Run "terraform apply" and review the output in terminal and when ready, type yes and hit enter
+  5. Update the account_id variable with your aws account id in airbus_dev_devops02_code_repo/lambda_bootstrap/providers.tf file
+  6. Change the BUCKET_NAME in the file modules/codepipeline/roles.tf with the bucket you created in pre-requisites. Use the Bucket ARN here.
+  7. Navigate to code_pipeline_deployment and run "terraform init"
+  8. Run "terraform validate"
+  9. Run "terraform plan" and review the output in terminal
+  10. Run "terraform apply" and review the output in terminal and when ready, type yes and hit enter
   
  Part#3:
   1. Push the Lambda code to codecommit using codecommit url generated from Part#2 which will trigger codepipeline to deploy the lambda code.
@@ -62,9 +63,11 @@ Part#2:
   ![Link](https://github.com/sunkara-bhanu/list-instance-by-region/blob/main/img/Code_Pipeline_Image.JPG)
   
 Part#4:
-  1. Navigate to the unit_tests folder from root foler
+  1. Navigate to the unit_tests folder from root folder for [Link](https://github.com/sunkara-bhanu/list-instance-by-region/tree/main/unit_tests) 
   2. Run the file from ide with pytest plugin installed
   3. From terminal run "pytest" which will pick the test cases defined in the test_list_instances.py file and summarize the test result.
+  
+  ![Link](https://github.com/sunkara-bhanu/list-instance-by-region/blob/main/img/Unit_Test_Results.JPG)
   
 Part#5:
   1. Open POST man and create new collection with "GET" request type
