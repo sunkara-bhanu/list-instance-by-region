@@ -18,6 +18,11 @@ Below are the steps covered to launch resources,
 ![Fetch instances](https://github.com/sunkara-bhanu/list-instance-by-region/blob/main/img/Fetch_Instance_Info_Through_API.JPG)
 
 Pre-requisites
+Install Terraform : [Link] (https://developer.hashicorp.com/terraform/downloads)
+Install AWS CLI : [Link] (https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html) 
+Configure AWS CLI with AWS Account do aws sts get-caller-identity for validation) : [Link] (https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html)
+Create a S3 Bucket in ap-south-1. This bucket will be used to store the terraform state file. Note the bucket arn as it will be used in the steps below.
+
 This code is split into 5 parts,
 
 Part#1:
@@ -27,8 +32,11 @@ Part#1:
   4. Public ip of the created instance will be shown as output, which can be used to validate the instance deployment in region specified
   5. Run command "terraform destroy -var="input_region=ap-south-1" -auto-approve" to delete the resources created.
   
-  
-Infrastructure for Codepipeline Deployment. ie, code under the path terraform/
+Part#2:
+  1. Deploy infrastructure for Codepipeline Deployment can be found in [Link](https://github.com/sunkara-bhanu/list-instance-by-region/tree/main/code_pipeline_deployment)
+  2. Navigate to folder code_pipeline_deployment update the following values from terraform.tfvars
+  3. 
+  4. 
 Uploading the Lambda code to CodeCommit Repository. ie, lambda code on path lambda_bootstrap/
 To achieve this, follow the pre-requisites steps below
 
