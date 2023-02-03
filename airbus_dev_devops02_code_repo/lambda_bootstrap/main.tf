@@ -165,6 +165,19 @@ resource "aws_api_gateway_integration_response" "integation_response_400" {
 }
 EOF
   }
+    depends_on = [
+    aws_api_gateway_integration.integration
+  ]
+}
+
+resource "aws_api_gateway_gateway_response" "integation_response_403" {
+  rest_api_id   = aws_api_gateway_rest_api.api.id
+  status_code   = "403"
+  response_type = "INVALID_API_KEY"
+
+  response_templates = {
+    "application/json" = "{\"code\": \"403\",\"message\": \"Forbidden\"}"
+  }
 }
 
 # Lambda
